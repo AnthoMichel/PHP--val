@@ -3,15 +3,25 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 
 <?php
+//--------------------READ-------------------------
 $dbh = new PDO('mysql:host=localhost;dbname=immo', "root","");
 
 $req  = $dbh->prepare("SELECT * FROM logement");
 $req->execute();
 $apparts = $req->fetchAll(PDO::FETCH_ASSOC);
 $req->closeCursor();
-
+//-----------------ENDREAD--------------------------
 ?>
 
+<?php // var_dump($apparts) ?>
+
+<main class="container">
+
+<h1 class="my-5 text-center">
+    Nos Apparts
+</h1>
+
+<div class="row flex-lg-row flex-xl-row flex-column">
 <?php
 foreach ($apparts as $appart) :?>
 <div class="card text-center shadow my-3">
@@ -30,8 +40,14 @@ foreach ($apparts as $appart) :?>
                         <span>NC</span>
                 <?php endif; ?>
             </p>
+            <p>Ville : 
+                <?php if ($appart["ville"]): ?>
+                <span><?= mb_strtoupper($appart["ville"])?></span>
+                    <?php else: ?>
+                        <span>NC</span>
+                <?php endif; ?>
+            </p>
     
-            <p>Ville: <?=($appart["ville"])?></p>
     
             <p>CP :
                 <?php if ($appart["cp"]): ?>
@@ -79,5 +95,9 @@ foreach ($apparts as $appart) :?>
     </div>
     <hr>
     
-}
+
 <?php endforeach ?>
+</div>
+
+
+</main>
