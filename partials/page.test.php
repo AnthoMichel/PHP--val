@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="../assets/css/style.css">
 
 <?php
 $dbh = new PDO('mysql:host=localhost;dbname=immo', "root","");
@@ -28,14 +29,45 @@ foreach ($apparts as $appart) :?>
                     <?php else: ?>
                         <span>NC</span>
                 <?php endif; ?>
-    
             </p>
     
-            <p>Ville: <?php ($appart["ville"])?></p>
+            <p>Ville: <?=($appart["ville"])?></p>
     
             <p>CP :
                 <?php if ($appart["cp"]): ?>
                     <span><?= $appart["cp"]?></span>
+                    <?php else: ?>
+                        <span>NC</span>
+                <?php endif; ?>
+            </p>
+
+            <p>Surface :
+                <?php if ($appart["surface"]): ?>
+                    <span><?= $appart["cp"]?> m²</span>
+                    <?php else: ?>
+                        <span>NC</span>
+                <?php endif; ?>
+            </p>
+
+            <p>Prix :
+                <?php if ($appart["prix"]): ?>
+                    <span><?= $appart["prix"]?> €</span>
+                    <?php else: ?>
+                        <span>NC</span>
+                <?php endif; ?>
+            </p>
+
+            <p>Type :
+                <?php if ($appart["type"]): ?>
+                    <span><?= $appart["type"]?></span>
+                    <?php else: ?>
+                        <span>NC</span>
+                <?php endif; ?>
+            </p>
+
+            <p>Description :
+                <?php if ($appart["description"]): ?>
+                    <span><?= $appart["description"]?></span>
                     <?php else: ?>
                         <span>NC</span>
                 <?php endif; ?>
