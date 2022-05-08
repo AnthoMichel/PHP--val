@@ -4,16 +4,19 @@
 
 <?php
 //--------------------READ-------------------------
-$dbh = new PDO('mysql:host=localhost;dbname=immo', "root","");
-
-$req  = $dbh->prepare("SELECT * FROM logement");
-$req->execute();
+$dbh = new PDO('mysql:host=localhost;dbname=immo', "root",""); //Connexion a la BDD
+//   Host connexion a mon serveur ici localhost;(pas d'espace entre) dbname (DataBase name) : nom de ta base de donnée; 
+// puis "identifiant" et "mot de passe"
+$req  = $dbh->prepare("SELECT * FROM logement"); // la requete pour tout recuperer (SELECT *) de la table logement (FROM)
+$req->execute(); 
 $apparts = $req->fetchAll(PDO::FETCH_ASSOC);
 $req->closeCursor();
 //-----------------ENDREAD--------------------------
 ?>
 
-<?php // var_dump($apparts) ?>
+<?php var_dump($apparts); // permet de tester si on accede a la BDD
+?>
+
 
 <main class="container">
 
@@ -49,7 +52,7 @@ foreach ($apparts as $appart) :?>
             </p>
     
     
-            <p>CP :
+            <p>Code Postal :
                 <?php if ($appart["cp"]): ?>
                     <span><?= $appart["cp"]?></span>
                     <?php else: ?>
