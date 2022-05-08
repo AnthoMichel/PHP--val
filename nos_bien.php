@@ -25,7 +25,7 @@ require_once "partials/header.php";
                     <img src="<?= $appart["photo"] ?>" alt="photo1">
                     <hr>
                     <p class=" badge
-                    <?php echo ($appart['type_immo'] == 'Maison') ? '  badge-success' : ' badge-warning' ?> " ><?= mb_strtoupper($appart["type_immo"]) ?></p>
+                    <?php echo ($appart['type_immo'] == 'Maison') ? '  badge-success' : ' badge-info' ?> " ><?= mb_strtoupper($appart["type_immo"]) ?></p>
                     <p>Adresse:
                             <span><?= mb_strtoupper($appart["adresse"]) ?></span>
 
