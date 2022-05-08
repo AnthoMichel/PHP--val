@@ -22,8 +22,6 @@ require_once "partials/header.php";
                 <div class="card-body">
                     <img src="<?= $appart["photo"] ?>" alt="Photo du bien">
                     <hr>
-                    <p class=" badge
-                    <?php echo ($appart['type_immo'] == 'Maison') ? '  badge-success' : ' badge-info' ?> "><?= mb_strtoupper($appart["type_immo"]) ?></p>
                     <p>Adresse:
                         <span><?= ucwords($appart["adresse"]) ?></span>
                     </p>

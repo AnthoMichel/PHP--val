@@ -44,9 +44,6 @@
                         <div class="card-body">
                             <img src="<?= $apparts["$i"]["photo"] ?>" alt="photo1">
                             <hr>
-                            <p>Type Immobilier:
-                                <span><?= mb_strtoupper($apparts["$i"]["type_immo"]) ?></span>
-                            </p>
                             <p>Adresse:
                                 <span><?= mb_strtoupper($apparts["$i"]["adresse"]) ?></span>
                             </p>

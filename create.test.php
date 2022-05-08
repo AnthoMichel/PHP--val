@@ -20,20 +20,15 @@
             
             
             <form class="bg-light shadow p-3 form-group col-6 m-auto border" action="createValid.php" method="post">
-                <input type="text" class="form-control my-2" name="titre" placeholder="titre" required>
-                <select name="type_immo" required>
-                    <option value="Maison">Maison</option>
-                    <option value="appartement">appartement</option>
-                <input type="text" class="form-control my-2" name="adresse" placeholder="Adresse" required>
-                <input type="text" class="form-control my-2" name="ville" placeholder="Ville" required>
-                <input type="number" class="form-control my-2" name="cp" placeholder="CP" required>
-                <input type="number" class="form-control my-2" name="surface" placeholder="Surface en m²" required>
-                <input type="number" class="form-control my-2" name="prix" placeholder="prix" required>
+                <input type="text" class="form-control my-2" name="titre" placeholder="titre" >
+                <input type="text" class="form-control my-2" name="adresse" placeholder="Adresse" >
+                <input type="text" class="form-control my-2" name="ville" placeholder="Ville" >
+                <input type="text" class="form-control my-2" name="cp" placeholder="CP" >
+                <input type="text" class="form-control my-2" name="surface" placeholder="Surface en m²" >
+                <input type="number" class="form-control my-2" name="prix" placeholder="prix" >
                 <input type="file" accept="jpg," class="form-control my-2" name="photo" placeholder="Photo">
-                <select name="type" required>
-                    <option value="vente">Vente</option>
-                    <option value="location">Location</option>
-            <textarea type="text" class="form-control my-2" name="commentaires" placeholder="un commentaire..-"></textarea>
+                <input type="text" class="form-control my-2" name="type" placeholder="type" >
+            <textarea type="text" class="form-control my-2" name="description" placeholder="Description du bien-"></textarea>
             <br>
             <button type="submit" class="m-auto my-2 d-block btn btn-success">Ajouter</button>
         </form>
