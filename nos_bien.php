@@ -12,8 +12,6 @@ require_once "partials/header.php";
     <div class="row flex-lg-row flex-xl-row flex-column">
         <?php
 
-
-
         foreach ($apparts as $appart) : ?>
             <div class="card text-center shadow my-3">
 
@@ -28,19 +26,18 @@ require_once "partials/header.php";
                     <?php echo ($appart['type_immo'] == 'Maison') ? '  badge-success' : ' badge-info' ?> " ><?= mb_strtoupper($appart["type_immo"]) ?></p>
                     <p>Adresse:
                             <span><?= mb_strtoupper($appart["adresse"]) ?></span>
-
                     </p>
+
                     <p>Ville :
                             <span><?= mb_strtoupper($appart["ville"]) ?></span>
                     </p>
-
 
                     <p>Code Postal :
                             <span><?= $appart["cp"] ?></span>
                     </p>
 
                     <p>Surface :
-                            <span><?= $appart["cp"] ?> m²</span>
+                            <span><?= $appart["surface"] ?> m²</span>
                     </p>
 
                     <p>Prix :
@@ -64,6 +61,7 @@ require_once "partials/header.php";
                     </p>
 
                     <p>Réserver maintenant !</p>
+                    
                     <button class="btn btn-primary ">Réserver</button>
                 </div>
             </div>
