@@ -2,7 +2,7 @@
 require_once "partials/page.test.php";
 require_once "partials/header.php";
 ?>
-    <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <main class="container">
 
     <h1 class="my-5 text-center">
@@ -10,8 +10,8 @@ require_once "partials/header.php";
     </h1>
 
     <div class="row flex-lg-row flex-xl-row flex-column">
-        <?php
 
+        <?php
         foreach ($apparts as $appart) : ?>
             <div class="card text-center shadow my-3">
 
@@ -20,36 +20,32 @@ require_once "partials/header.php";
                 </div>
 
                 <div class="card-body">
-                    <img src="<?= $appart["photo"] ?>" alt="photo1">
+                    <img src="<?= $appart["photo"] ?>" alt="Photo du bien">
                     <hr>
                     <p class=" badge
-                    <?php echo ($appart['type_immo'] == 'Maison') ? '  badge-success' : ' badge-info' ?> " ><?= mb_strtoupper($appart["type_immo"]) ?></p>
+                    <?php echo ($appart['type_immo'] == 'Maison') ? '  badge-success' : ' badge-info' ?> "><?= mb_strtoupper($appart["type_immo"]) ?></p>
                     <p>Adresse:
-                            <span><?= mb_strtoupper($appart["adresse"]) ?></span>
+                        <span><?= ucwords($appart["adresse"]) ?></span>
                     </p>
 
                     <p>Ville :
-                            <span><?= mb_strtoupper($appart["ville"]) ?></span>
+                        <span><?= mb_strtoupper($appart["ville"]) ?></span>
                     </p>
 
                     <p>Code Postal :
-                            <span><?= $appart["cp"] ?></span>
+                        <span><?= $appart["cp"] ?></span>
                     </p>
 
                     <p>Surface :
-                            <span><?= $appart["surface"] ?> m²</span>
+                        <span><?= $appart["surface"] ?> m²</span>
                     </p>
 
                     <p>Prix :
-                        <?php if ($appart["prix"]) : ?>
-                            <span><?= $appart["prix"] ?> €</span>
-                        <?php else : ?>
-                            <span>NC</span>
-                        <?php endif; ?>
+                        <span><?= $appart["prix"] ?> €</span>
                     </p>
 
                     <p>Type :
-                            <span><?= $appart["type"] ?></span>
+                        <span><?= $appart["type"] ?></span>
                     </p>
 
                     <p>Description :
@@ -61,17 +57,16 @@ require_once "partials/header.php";
                     </p>
 
                     <p>Réserver maintenant !</p>
-                    
+
                     <button class="btn btn-primary ">Réserver</button>
                 </div>
             </div>
             <hr>
 
-
         <?php endforeach ?>
 
     </div>
-    </main>
-    <?php
-    require_once "partials/footer.php";
-    ?>
+</main>
+<?php
+require_once "partials/footer.php";
+?>

@@ -98,9 +98,9 @@
 
                     <hr>
                 <?php endfor ?>
-
+                
+                <!-- rapporter 2 card de la BDD -->
             </div>
-            <!-- rapporter 2 card de la BDD -->
     </main>
 
 
