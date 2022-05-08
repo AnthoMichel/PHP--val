@@ -36,7 +36,7 @@
             <div class="card-deck flex-lg-row flex-md-row flex-xl-row flex-column">
 
                 <?php for ($i = 0; $i < 2; $i++) : ?>
-                    <div class="card text-center shadow my-3 border border-success">
+                    <div class="card text-center shadow my-3 border border-info">
                         <div class="card-header bg-dark text-white ">
                             <h2 class="card-title"><?= ucwords($apparts["$i"]["titre"]) ?></h2>
                         </div>
@@ -44,6 +44,9 @@
                         <div class="card-body">
                             <img src="<?= $apparts["$i"]["photo"] ?>" alt="photo1">
                             <hr>
+                            <p>Type Immobilier:
+                                <span><?= mb_strtoupper($apparts["$i"]["type_immo"]) ?></span>
+                            </p>
                             <p>Adresse:
                                 <span><?= mb_strtoupper($apparts["$i"]["adresse"]) ?></span>
                             </p>
