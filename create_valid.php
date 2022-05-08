@@ -1,9 +1,9 @@
-@ -0,0 +1,36 @@
+
 <?php
 
 var_dump($_POST);
 
-$bdd = new PDO('mysql:host=localhost;dbname=jeux_projet', "root", "");
+$bdd = new PDO('mysql:host=localhost;dbname=immo', "root", "");
 // encore cette bdd ici !
 $nom = $_POST['nom']; 
 $possesseur = $_POST['possesseur']; 
