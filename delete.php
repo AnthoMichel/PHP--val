@@ -1,15 +1,15 @@
 <?php
 
-// var_dump($_POST);
+ var_dump($_POST);
 $bdd = new PDO('mysql:host=localhost;dbname=immo', "root", "");
 if (!empty($_POST['appartID'])) {
 
 
-    $idGame = $_POST['appartID']; // vérifier type
+    $idAppart = $_POST['appartID']; // vérifier type
     // avoir la bdd ($bdd) forcement... require...
-    $req = "DELETE FROM jeux_video WHERE ID= :id";
+    $req = "DELETE FROM logement WHERE id_logement= :id";
     $stmt = $bdd->prepare($req); // ou ecrire dans prepare 
-    $stmt->bindValue(":id", $idGame, PDO::PARAM_INT);
+    $stmt->bindValue(":id", $idAppart, PDO::PARAM_INT);
     $result = $stmt->execute(); // si good redirection !
     $stmt->closeCursor();
     

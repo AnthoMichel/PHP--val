@@ -5,12 +5,7 @@ require_once "partials/header.php";
 
 //--------------------------------------------  READ -------------------------------------------------
 
-$bdd = new PDO('mysql:host=localhost;dbname=immo', "root", ""); 
-// connexion à la BDD
-$req  = $bdd->prepare("SELECT * FROM logement "); // la requete 
-$req->execute(); // envoi et execution en BDD 
-$apparts = $req->fetchAll(PDO::FETCH_ASSOC); 
-$req->closeCursor(); 
+require_once "partials/page.test.php"
 ?>
 
 
@@ -62,7 +57,7 @@ $req->closeCursor();
                         <td>
                         <form action="delete.php" method="post" 
                             onSubmit="return confirm('Êtes-vous certain ?')">
-                            <input hidden type="text" name="IDappart " value="<?= $appart['id_logement'] ?>">
+                            <input hidden type="text" name="appartID" value="<?= $appart['id_logement'] ?>">
                         <button class="btn" type="submit">X</button>
                         </form>
                         </td>

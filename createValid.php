@@ -1,7 +1,7 @@
 <?php
 
 var_dump($_POST);
-
+var_dump($_FILE);
 $bdd = new PDO('mysql:host=localhost;dbname=immo', "root", "");
 // encore cette bdd ici !
 
@@ -11,9 +11,9 @@ $ville = $_POST['ville'];
 $cp = $_POST['cp']; 
 $surface = $_POST['surface']; 
 $prix = $_POST['prix']; 
-$photo = $_POST['photo']; 
-$type = $_POST['type']; 
-$description = $_POST['description']; 
+$photo = $_POST['photo'];
+$type = $_POST['type'];
+$description = $_POST['description'];
 
 // faire des vérifs avant !
 $req = "INSERT INTO `logement` (`titre`, `adresse`, `ville`, `cp`, `surface`, `prix`, `photo`, `type`, `description`) VALUES 
@@ -42,6 +42,6 @@ $result = $stmt->execute(); // return true si good donc si
 $stmt->closeCursor();       // donc SI good redirect avec header
 var_dump($stmt = $bdd->prepare($req));
 // ah comme ça ! évidemment !
-if ($result) {
-    header("Location: test.php");
-}
+// if ($result) {
+//     header("Location: test.php");
+// }
