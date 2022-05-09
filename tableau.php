@@ -5,7 +5,7 @@ require_once "partials/header.php";
 
 //--------------------------------------------  READ -------------------------------------------------
 
-require_once "partials/page.test.php"
+require_once "partials/database.php"
 ?>
 
 
@@ -20,7 +20,7 @@ require_once "partials/page.test.php"
     <title>Document</title>
 </head>
 <body>
-<h1 class="p-4 my-5 bg-dark text-danger text-center"> Page test</h1>
+<h1 class="p-4 my-5 bg-dark text-danger text-center"> Tableau des biens (page admin)</h1>
 
 
     
@@ -71,7 +71,7 @@ require_once "partials/page.test.php"
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <a href="create.test.php" class="btn btn-info d-block">Ajouter un jeu</a>
+        <a href="create.test.php" class="btn btn-info d-block">Ajouter un bien</a>
     </main>
 <?php require_once "partials/footer.php" ?>
 </body>

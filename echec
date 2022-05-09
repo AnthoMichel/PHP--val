@@ -47,3 +47,10 @@ var_dump($stmt = $bdd->prepare($req));
 if ($result) {
     header("Location: test.php");
 }
+
+
+<select name="type" class="form-control my-2">
+<option value="">--Type d'offre--</option>
+<option value="location">location</option>
+<option value="vente">vente</option>
+</select>

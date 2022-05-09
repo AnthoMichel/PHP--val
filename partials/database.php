@@ -16,4 +16,3 @@ $req->closeCursor();
 
 <?php // var_dump($apparts); // permet de tester si on accede a la BDD
 ?>
-

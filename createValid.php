@@ -1,8 +1,8 @@
 <?php
 
 var_dump($_POST);
-
-$bdd = new PDO('mysql:host=localhost;dbname=immo', "root", "");
+require_once "partials/database.php";
+// $bdd = new PDO('mysql:host=localhost;dbname=immo', "root", "");
 // encore cette bdd ici !
 
 $titre = $_POST['titre']; 
@@ -27,7 +27,7 @@ $req = "INSERT INTO `logement` (`titre`, `adresse`, `ville`, `cp`, `surface`, `p
                     :photo,
                     :type,
                     :description) ";
-$stmt = $bdd->prepare($req);
+$stmt = $dbh->prepare($req);
 $stmt->bindValue(":titre",$titre, PDO::PARAM_STR);
 $stmt->bindValue(":adresse",$adresse, PDO::PARAM_STR);
 $stmt->bindValue(":ville",$ville, PDO::PARAM_STR);
@@ -40,8 +40,10 @@ $stmt->bindValue(":description",$description, PDO::PARAM_STR);
 
 $result = $stmt->execute(); // return true si good donc si 
 $stmt->closeCursor();       // donc SI good redirect avec header
-var_dump($stmt = $bdd->prepare($req));
+var_dump($stmt = $dbh->prepare($req));
 // ah comme ça ! évidemment !
 if ($result) {
-    header("Location: test.php");
+    header("Location: tableau.php");
+}if ( empty($resultat) ) {
+    header("Location: create.test.php");
 }

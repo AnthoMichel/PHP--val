@@ -1,5 +1,5 @@
 <?php
-require_once "partials/page.test.php";
+require_once "partials/database.php";
 require_once "partials/header.php";
 ?>
 <link rel="stylesheet" href="assets/css/style.css">
@@ -20,7 +20,7 @@ require_once "partials/header.php";
                 </div>
 
                 <div class="card-body">
-                    <img src="<?= $appart["photo"] ?>" alt="Photo du bien">
+                    <img src="<?= $appart["photo"] ?>" alt="Photo du bien" style=[max-width>
                     <hr>
                     <p>Adresse:
                         <span><?= ucwords($appart["adresse"]) ?></span>

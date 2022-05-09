@@ -1,31 +1,29 @@
+<?php require_once "partials/header.php" ?>
 <?php
 
-var_dump($_POST);
+// var_dump($_POST);
 
-$bdd = new PDO('mysql:host=localhost;dbname=immo', "root", ""); 
-// hum un require database.php serait mieux non ?
-$idGame = $_POST['gameID'];
+require_once "partials/database.php";
 
-$req  = $bdd->prepare("SELECT * FROM logement WHERE ID=:gameID"); 
 
-$req->bindValue('gameID', $idGame, PDO::PARAM_INT); 
-
-$req->execute(); 
-
-$game = $req->fetchAll(PDO::FETCH_ASSOC); 
-
-$req->closeCursor(); 
-
-var_dump($game);
-var_dump($game[0]['nom']);
-
+// var_dump($apparts);
+// var_dump($apparts[0]['titre']);
 
 
 
 ?>
 
 <form action="editValid.php" method="post">
-    <input type="text" name="nom" value="<?= $game[0]['nom'] ?>">
-    <input hidden type="text" name="gameID" value="<?= $game[0]['ID'] ?>">
-<button type="submit">Edit</button>
+    <input type="text" class="form-control my-2" name="titre" placeholder="titre">
+    <input type="text" class="form-control my-2" name="adresse" placeholder="Adresse">
+    <input type="text" class="form-control my-2" name="ville" placeholder="Ville">
+    <input type="text" class="form-control my-2" name="cp" placeholder="CP">
+    <input type="text" class="form-control my-2" name="surface" placeholder="Surface en m²">
+    <input type="number" class="form-control my-2" name="prix" placeholder="prix">
+    <input type="file" action="./assets/img/upload.php" accept="jpg," class="form-control my-2" name="photo" placeholder="Photo">
+    <input type="text" class="form-control my-2" name="type" placeholder="type">
+    <textarea type="text" class="form-control my-2" name="description" placeholder="Description du bien-"></textarea>
+    <br>
+    <button type="submit">Edit</button>
 </form>
+<?php require_once "partials/footer.php" ?>

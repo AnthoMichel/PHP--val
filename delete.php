@@ -15,6 +15,6 @@ if (!empty($_POST['appartID'])) {
     
     
     if ($result) {
-        header("Location: test.php");
+        header("Location: tableau.php");
     }
 }
