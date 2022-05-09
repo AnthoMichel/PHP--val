@@ -71,7 +71,7 @@ require_once "partials/page.test.php"
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <a href="create.php" class="btn btn-info d-block">Ajouter un jeu</a>
+        <a href="create.test.php" class="btn btn-info d-block">Ajouter un jeu</a>
     </main>
 <?php require_once "partials/footer.php" ?>
 </body>
