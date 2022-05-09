@@ -8,8 +8,6 @@ require_once "partials/header.php";
 require_once "partials/database.php"
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
