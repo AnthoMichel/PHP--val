@@ -25,7 +25,7 @@
                     <a href="create.test.php" class="nav-link">rajout de biens</a>
                 </li>
                 <li class="nav-item">
-                    <a href="test.php" class="nav-link">Tableau</a>
+                    <a href="tableau.php" class="nav-link">Tableau</a>
                 </li>
             </ul>
 
