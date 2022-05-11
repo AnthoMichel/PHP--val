@@ -44,6 +44,4 @@ var_dump($stmt = $dbh->prepare($req));
 // ah comme ça ! évidemment !
 if ($result) {
     header("Location: tableau.php");
-}if ( empty($resultat) ) {
-    header("Location: create.test.php");
 }
